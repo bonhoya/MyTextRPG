@@ -15,12 +15,11 @@ namespace SimpleTextRPG.Scenes
             Console.WriteLine("무언가의 습격을 받아 함선의 엔진에 이상이 생겼다───!!!");
             Console.WriteLine("\\시스템: 폭발음\\");
             Console.WriteLine("그대로 불시착하여 이름모를 행성에 추락하게 되는데...");
-            Console.Clear();
             Console.WriteLine("....................................................");
-            Console.Clear();
             Console.WriteLine("눈을 떠보니 당신은 불시착한 행성에 있었다.");
             Console.WriteLine("함선의 엔진은 망가져 고칠 때까지 이동하지 못한다. 게다가 이 행성은 꽤나 추운듯 하다.");
             Console.WriteLine("무엇을 할까?");
+            Game.PlayerInfo();
         }
         public override void Choice()
         {
@@ -55,7 +54,7 @@ namespace SimpleTextRPG.Scenes
                 case ConsoleKey.D1:
                     Console.WriteLine("아뿔싸──!! 당신은 아무런 준비도 없이 영하50도의 환경에 노출됐다!!!");
                     Console.WriteLine("\\시스템: 당신은 사망하였습니다.\\");
-                    Game.GameOver("사망원인: 방한복도 없이 영하의 기온에 노출");
+                    Game.GameOver("사망원인: 방한대책 없이 영하의 기온에 노출");
                     break;
 
                 case ConsoleKey.D2:

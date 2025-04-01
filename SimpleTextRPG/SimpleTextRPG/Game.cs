@@ -14,6 +14,7 @@ namespace SimpleTextRPG
         private static Scene curScene;
 
         private static Dictionary<string, Scene> sceneDic;
+        private static Player player;
         
 
         public static void Start()
@@ -24,6 +25,9 @@ namespace SimpleTextRPG
 
             curScene = sceneDic["Title"];
 
+            player = new Player();
+            player.HP = 1;
+            player.Stamina = 1;
         }
 
         public static void Stop()
@@ -44,6 +48,7 @@ namespace SimpleTextRPG
                 curScene.Result();
                 Console.WriteLine();
                 curScene.Wait();
+                Console.WriteLine();
                 curScene.Next();
             }
         }
@@ -62,6 +67,13 @@ namespace SimpleTextRPG
         public static void ChangeScene(string SceneName)
         {
             curScene = sceneDic[SceneName];
+        }
+
+        public static void PlayerInfo()
+        {
+            Console.WriteLine("┌────────────────────────────────────────────────┐");
+            Console.WriteLine("│ 현재 플레이어 체력: {0}, 플레이어 스태미나: {1}    │", player.HP, player.Stamina);
+            Console.WriteLine("└────────────────────────────────────────────────┘");
         }
     }
 }
