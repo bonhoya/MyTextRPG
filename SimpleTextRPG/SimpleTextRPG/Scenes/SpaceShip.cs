@@ -7,6 +7,7 @@
             Console.WriteLine("당신은 함선 내부로 들어왔습니다.");
             Console.WriteLine("함선 내부에는 여러가지가 보입니다.");
             Console.WriteLine();
+            Game.PlayerInfo();
 
         }
         public override void Choice()
@@ -43,7 +44,11 @@
             }
         }
 
-        public override void Wait() { }
+        public override void Wait() 
+        {
+            Console.WriteLine("계속 진행하려면 아무키나 입력");
+            Console.ReadKey();
+        }
 
         public override void Next()
         {

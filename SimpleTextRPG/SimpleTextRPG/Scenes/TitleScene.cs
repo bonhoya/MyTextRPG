@@ -12,10 +12,10 @@ namespace SimpleTextRPG.Scenes
         {
             Console.WriteLine("┌────────────────────────────────────────────────┐");
             Console.WriteLine("│                                                │");
-            Console.WriteLine("│        TEXT                                    │");
-            Console.WriteLine("│            RPG                                 │");
+            Console.WriteLine("│            행성                                │");
+            Console.WriteLine("│                 표류기                         │");
             Console.WriteLine("│                                                │");
-            Console.WriteLine("│                                                │");
+            Console.WriteLine("│    PUSH THE ENTER_KEY WHEN YOU WANT START!     │");
             Console.WriteLine("│                                                │");
             Console.WriteLine("│                                                │");
             Console.WriteLine("└────────────────────────────────────────────────┘");
@@ -24,7 +24,7 @@ namespace SimpleTextRPG.Scenes
         }
         public override void Choice()
         {
-            Console.WriteLine("      PUSH THE ENTER_KEY WHEN YOU WANT START!     ");
+
         }
 
         public override void Result() { }

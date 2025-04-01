@@ -31,6 +31,7 @@ namespace SimpleTextRPG
             player = new Player();
             player.HP = 1;
             player.Stamina = 1;
+            
         }
 
         public static void Stop()
@@ -74,9 +75,9 @@ namespace SimpleTextRPG
 
         public static void PlayerInfo()
         {
-            Console.WriteLine("┌────────────────────────────────────────────────┐");
-            Console.WriteLine("│ 현재 플레이어 체력: {0}, 플레이어 스태미나: {1}    │", player.HP, player.Stamina);
-            Console.WriteLine("└────────────────────────────────────────────────┘");
+            Console.WriteLine("┌────────────────────────────────────────────────────┐");
+            Console.WriteLine("  현재 플레이어 체력: {0}, 플레이어 스태미나: {1}    ", player.HP, player.Stamina);
+            Console.WriteLine("└────────────────────────────────────────────────────┘");
         }
     }
 }

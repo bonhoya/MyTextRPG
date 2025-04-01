@@ -10,6 +10,7 @@ namespace SimpleTextRPG.Scenes
     {
         public override void Render()
         {
+            Console.WriteLine("\\시놉시스\\");
             Console.WriteLine("당신은 우주함선을 운전하는 베테랑 항해사이다...");
             Console.WriteLine("어느때와 같이 임무를 수행하던중...");
             Console.WriteLine("무언가의 습격을 받아 함선의 엔진에 이상이 생겼다───!!!");
@@ -18,6 +19,8 @@ namespace SimpleTextRPG.Scenes
             Console.WriteLine("....................................................");
             Console.WriteLine("눈을 떠보니 당신은 불시착한 행성에 있었다.");
             Console.WriteLine("함선의 엔진은 망가져 고칠 때까지 이동하지 못한다. 게다가 이 행성은 꽤나 추운듯 하다.");
+
+            Console.WriteLine("당신은 현재 함선의 함장실에 있다.");
             Console.WriteLine("무엇을 할까?");
             Game.PlayerInfo();
         }
