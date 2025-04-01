@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleTextRPG.Scenes
+﻿namespace SimpleTextRPG.Scenes
 {
     public class EngineRoom : Scene
     {
@@ -29,8 +23,19 @@ namespace SimpleTextRPG.Scenes
             {
                 case ConsoleKey.D1:
                     Console.WriteLine("당신은 엔진을 고치려고 애를 썼다.");
-                    Console.WriteLine("하지만 아무일도 일어나지 않았다...");
-                    break;
+                    if (Game.Inventory.PartsOfTheEngine == 1)
+                    {
+                        Console.WriteLine("당신은 가지고 있던 엔진 부품을 이용해 엔진을 완벽하게 고쳐냈다!!!");
+                        Console.WriteLine("\\시스템: 위───잉!!\\");
+                        Console.WriteLine("엔진의 우렁찬 소리가 들렸다. 보고싶었어 엔진아!!");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("하지만 아무일도 일어나지 않았다...");
+                        Console.WriteLine("아무래도 필요한 부품을 어딘가에서 구해야 할 것 같다...");
+                        break;
+                    }
                 case ConsoleKey.D2:
                     Console.WriteLine("당신은 엔진을 부쉈다.");
                     Console.WriteLine("그런데... 어라...????");
@@ -45,7 +50,7 @@ namespace SimpleTextRPG.Scenes
             }
         }
 
-        public override void Wait() 
+        public override void Wait()
         {
             Console.WriteLine("계속 진행하려면 아무키나 입력");
             Console.ReadKey();
@@ -57,6 +62,20 @@ namespace SimpleTextRPG.Scenes
         {
             switch (input)
             {
+
+                case ConsoleKey.D1:
+                    if (Game.Inventory.PartsOfTheEngine == 1)
+                    {
+                        Game.Inventory.PartsOfTheEngine = 0;
+                        Console.WriteLine("당신은 엔진을 완벽히 고쳐내어 함선을 다시 운전했다.");
+                        Game.Player.GameScore = 2;
+                        Game.GameClear("\\낯선 곳으로 부터의 귀환 엔딩\\");
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 case ConsoleKey.D2:
                     Console.WriteLine("\\시스템: 콰─────과광──!!\\");
                     Console.WriteLine("당신은 엔진을 완전히 부숴버렸다.");

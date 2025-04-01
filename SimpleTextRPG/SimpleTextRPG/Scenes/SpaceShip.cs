@@ -28,10 +28,28 @@
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("방한 도구를 챙깁니다.");
-                    break;
+                    if(Game.Inventory.Tool == 0)
+                    {
+                        Console.WriteLine("\\시스템: 방한 도구 획득\\");
+                        Game.Inventory.Tool = 1;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("\\시스템: 이미 방한 도구를 얻으셔서 더이상 얻으실 수 없습니다.\\");
+                    }
+                        break;
                 case ConsoleKey.D3:
                     Console.WriteLine("무기를 챙깁니다.");
-                    break;
+                    if (Game.Inventory.Weapon == 0)
+                    {
+                        Console.WriteLine("\\시스템: 무기(호신용 광선총)획득\\");
+                        Game.Inventory.Weapon = 1;
+                        break;
+                    }
+                    else
+                        Console.WriteLine("\\시스템: 이미 무기를 얻으셔서 더이상 얻으실 수 없습니다.\\");
+                        break;
                 case ConsoleKey.D4:
                     Console.WriteLine("잠시 쉬어 모든 체력과 스태미나를 회복합니다.");
                     Console.WriteLine("\\시스템: 체력과 스태미나 회복\\");
@@ -54,6 +72,9 @@
         {
             switch (input)
             {
+                case ConsoleKey.D1:
+                    Game.ChangeScene("EngineRoom");
+                    break;
                 case ConsoleKey.D5:
                     Game.ChangeScene("LongLongPlanet");
                     break;

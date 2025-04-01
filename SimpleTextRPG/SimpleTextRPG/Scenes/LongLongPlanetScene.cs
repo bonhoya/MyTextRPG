@@ -55,10 +55,21 @@ namespace SimpleTextRPG.Scenes
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Console.WriteLine("아뿔싸──!! 당신은 아무런 준비도 없이 영하50도의 환경에 노출됐다!!!");
-                    Console.WriteLine("\\시스템: 당신은 사망하였습니다.\\");
-                    Game.GameOver("사망원인: 방한대책 없이 영하의 기온에 노출");
-                    break;
+                    if (Game.Inventory.Tool == 1)
+                    {
+                        Console.WriteLine("당신은 추위를 느껴 챙겨온 방한도구로 몸을 감쌌다.");
+                        Console.WriteLine("어느정도 걷자 저 멀리 마을이 보인다.");
+                        Console.WriteLine("당신은 그곳으로 가보기로 했다.");
+                        Game.ChangeScene("PlanetTown");
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("아뿔싸──!! 당신은 아무런 준비도 없이 영하50도의 환경에 노출됐다!!!");
+                        Console.WriteLine("\\시스템: 당신은 사망하였습니다.\\");
+                        Game.GameOver("사망원인: 방한대책 없이 영하의 기온에 노출");
+                        break;
+                    }
 
                 case ConsoleKey.D2:
                     Game.ChangeScene("SpaceShip");
