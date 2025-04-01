@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SimpleTextRPG.Scenes
+{
+    public class LongLongPlanetScene : Scene
+    {
+        public override void Render()
+        {
+            Console.WriteLine("당신은 우주함선을 운전하는 베테랑 항해사이다...");
+            Console.WriteLine("어느때와 같이 임무를 수행하던중...");
+            Console.WriteLine("무언가의 습격을 받아 함선의 엔진에 이상이 생겼다───!!!");
+            Console.WriteLine("\\시스템: 폭발음\\");
+            Console.WriteLine("그대로 불시착하여 이름모를 행성에 추락하게 되는데...");
+            Console.Clear();
+            Console.WriteLine("....................................................");
+            Console.Clear();
+            Console.WriteLine("눈을 떠보니 당신은 불시착한 행성에 있었다.");
+            Console.WriteLine("함선의 엔진은 망가져 고칠 때까지 이동하지 못한다. 게다가 이 행성은 꽤나 추운듯 하다.");
+            Console.WriteLine("무엇을 할까?");
+        }
+        public override void Choice()
+        {
+            Console.WriteLine("1. 밖으로 나가보자.");
+            Console.WriteLine("2. 함선 내부를 둘러보자.");
+        }
+
+        public override void Result()
+        {
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Console.WriteLine("당신은 일단 나가보기로 했다.");
+                    break;
+                case ConsoleKey.D2:
+                    Console.WriteLine("당신은 일단 함선을 둘러보기로 했다.");
+                    break;
+
+            }
+        }
+
+        public override void Wait()
+        {
+            Console.WriteLine("계속 진행하려면 아무키나 입력");
+            Console.ReadKey();
+        }
+
+        public override void Next()
+        {
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Console.WriteLine("아뿔싸──!! 당신은 아무런 준비도 없이 영하50도의 환경에 노출됐다!!!");
+                    Console.WriteLine("\\시스템: 당신은 사망하였습니다.\\");
+                    Game.GameOver("사망원인: 방한복도 없이 영하의 기온에 노출");
+                    break;
+
+                case ConsoleKey.D2:
+                    Game.ChangeScene("");
+                    break;
+            }
+                
+        }
+    }
+}

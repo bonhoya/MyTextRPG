@@ -20,6 +20,9 @@ namespace SimpleTextRPG
         {
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
+            sceneDic.Add("LongLongPlanet", new LongLongPlanetScene());
+
+            curScene = sceneDic["Title"];
 
         }
 
@@ -36,6 +39,7 @@ namespace SimpleTextRPG
                 curScene.Render();
                 Console.WriteLine();
                 curScene.Choice();
+                curScene.Input();
                 Console.WriteLine();
                 curScene.Result();
                 Console.WriteLine();
@@ -44,6 +48,20 @@ namespace SimpleTextRPG
             }
         }
 
-        
+        public static void GameOver(string reason)
+        {
+            Console.WriteLine("──────────────────────────────────────────────────");
+            Console.WriteLine("당신은 사망하였습니다.............................");
+            Console.WriteLine("──────────────────────────────────────────────────");
+            Console.WriteLine();
+            Console.WriteLine(reason);
+
+            gameOver = true;
+        }
+
+        public static void ChangeScene(string SceneName)
+        {
+            curScene = sceneDic[SceneName];
+        }
     }
 }

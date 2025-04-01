@@ -19,27 +19,22 @@ namespace SimpleTextRPG.Scenes
             Console.WriteLine("│                                                │");
             Console.WriteLine("│                                                │");
             Console.WriteLine("└────────────────────────────────────────────────┘");
-            Console.WriteLine("      PUSH THE ENTER_KEY WHEN YOU WANT START!     ");
+            Console.WriteLine();
 
         }
         public override void Choice()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("      PUSH THE ENTER_KEY WHEN YOU WANT START!     ");
         }
-        public override void Result()
-        {
-            throw new NotImplementedException();
-        }
-        public override void Wait()
-        {
-            throw new NotImplementedException();
-        }
+
+        public override void Result() { }
+        public override void Wait() { }
         public override void Next()
         {
             switch (input)
             {
                 case ConsoleKey.Enter :
-                    // TODO 게임 시작에서 본격적인 맵으로 넘기기
+                    Game.ChangeScene("LongLongPlanet");
                     break;
             }
         }
