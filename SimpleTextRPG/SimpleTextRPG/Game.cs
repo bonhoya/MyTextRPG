@@ -14,7 +14,9 @@ namespace SimpleTextRPG
         private static Scene curScene;
 
         private static Dictionary<string, Scene> sceneDic;
-        private static Player player;
+        private static Player player ;
+
+        public static Player Player{ get { return player; } }
         
 
         public static void Start()
@@ -22,6 +24,7 @@ namespace SimpleTextRPG
             sceneDic = new Dictionary<string, Scene>();
             sceneDic.Add("Title", new TitleScene());
             sceneDic.Add("LongLongPlanet", new LongLongPlanetScene());
+            sceneDic.Add("SpaceShip", new SpaceShip());
 
             curScene = sceneDic["Title"];
 

@@ -58,7 +58,7 @@ namespace SimpleTextRPG.Scenes
                     break;
 
                 case ConsoleKey.D2:
-                    Game.ChangeScene("");
+                    Game.ChangeScene("SpaceShip");
                     break;
             }
                 
