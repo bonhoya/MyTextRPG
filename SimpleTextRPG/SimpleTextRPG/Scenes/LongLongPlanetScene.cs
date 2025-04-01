@@ -58,10 +58,23 @@ namespace SimpleTextRPG.Scenes
                     if (Game.Inventory.Tool == 1)
                     {
                         Console.WriteLine("당신은 추위를 느껴 챙겨온 방한도구로 몸을 감쌌다.");
-                        Console.WriteLine("어느정도 걷자 저 멀리 마을이 보인다.");
-                        Console.WriteLine("당신은 그곳으로 가보기로 했다.");
-                        Game.ChangeScene("PlanetTown");
-                        break;
+                        Console.WriteLine("\\너무 추운 기온에 체력이 떨어졌다.\\");
+                        Game.Player.HP -= 1;
+                        Game.Player.Stamina -= 1;
+                        if (Game.Player.HP <= 0 && Game.Player.HP <= 0)
+                        {
+                            Console.WriteLine("당신은 견딜 수 없는 기온에 체력을 모두 뺏겨 그만 쓰려졌다...");
+                            Console.WriteLine("\\시스템: 당신은 사망하였습니다.\\");
+                            Game.GameOver("사망원인: 감당할 수 없는 추위로 체력을 모두 잃음");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("어느정도 걷자 저 멀리 마을이 보인다.");
+                            Console.WriteLine("당신은 그곳으로 가보기로 했다.");
+                            Game.ChangeScene("PlanetTown");
+                            break;
+                        }
                     }
                     else
                     {

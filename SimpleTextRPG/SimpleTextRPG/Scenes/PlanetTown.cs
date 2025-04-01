@@ -34,7 +34,7 @@ namespace SimpleTextRPG.Scenes
                         Console.WriteLine("하지만 당신에겐 총이 있었고 훌륭하게 그들을 제압했다!");
                         Console.WriteLine("이윽고 당신은 엔진을 고칠 부품을 요구했다.");
                         Console.WriteLine("그들은 덜덜 떨며 엔진을 고칠 부품을 가져왔다.");
-                        Game.Inventory.PartsOfTheEngine += 1;
+                        Game.Inventory.PartsOfTheEngine = 1;
                         break;
                     }
                     else

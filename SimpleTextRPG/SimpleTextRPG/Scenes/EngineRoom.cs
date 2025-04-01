@@ -25,10 +25,18 @@
                     Console.WriteLine("당신은 엔진을 고치려고 애를 썼다.");
                     if (Game.Inventory.PartsOfTheEngine == 1)
                     {
-                        Console.WriteLine("당신은 가지고 있던 엔진 부품을 이용해 엔진을 완벽하게 고쳐냈다!!!");
-                        Console.WriteLine("\\시스템: 위───잉!!\\");
-                        Console.WriteLine("엔진의 우렁찬 소리가 들렸다. 보고싶었어 엔진아!!");
-                        break;
+                        if (Game.Player.HP == 10 && Game.Player.Stamina == 10)
+                        {
+                            Console.WriteLine("당신은 가지고 있던 엔진 부품을 이용해 엔진을 완벽하게 고쳐냈다!!!");
+                            Console.WriteLine("\\시스템: 위───잉!!\\");
+                            Console.WriteLine("엔진의 우렁찬 소리가 들렸다. 보고싶었어 엔진아!!");
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("당신은 부품은 가지고 있지만 체력과 스태미나가 없어 엔진을 고칠수가 없었다.");
+                            break;
+                        }
                     }
                     else
                     {
@@ -66,11 +74,16 @@
                 case ConsoleKey.D1:
                     if (Game.Inventory.PartsOfTheEngine == 1)
                     {
-                        Game.Inventory.PartsOfTheEngine = 0;
-                        Console.WriteLine("당신은 엔진을 완벽히 고쳐내어 함선을 다시 운전했다.");
-                        Game.Player.GameScore = 2;
-                        Game.GameClear("\\낯선 곳으로 부터의 귀환 엔딩\\");
-                        break;
+                        if (Game.Player.HP == 10 && Game.Player.Stamina == 10)
+                        {
+                            Game.Inventory.PartsOfTheEngine = 0;
+                            Console.WriteLine("당신은 엔진을 완벽히 고쳐내어 함선을 다시 운전했다.");
+                            Game.Player.GameScore = 2;
+                            Game.GameClear("\\낯선 곳으로 부터의 귀환 엔딩\\");
+                            break;
+                        }
+                        else
+                            break;
                     }
                     else
                     {
